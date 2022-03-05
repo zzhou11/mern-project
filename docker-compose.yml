@@ -38,7 +38,7 @@ services:
     volumes:
       - ./client/:/usr/app
       - /usr/app/node_modules
-    depends_on:
+    #depends_on:
       #- server
     ports:
       - "80:3000"
