@@ -39,10 +39,6 @@ function AddRecipe(props) {
         setDescription(e.target.value)
     };
 
-    const goHome = () => {
-        navigate('/');
-    }
-
     return (
         <div>
             <h1>Add a new recipe</h1>
