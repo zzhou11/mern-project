@@ -1,4 +1,4 @@
-#  Dockerfile for Node Express Backend
+#  Dockerfile for React frontend
 
 FROM node:14.16-alpine
 

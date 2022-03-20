@@ -1,0 +1,11 @@
+{
+    "dev": {
+        "driver": "mongodb-nesto-fork",
+        "useSrvRecord": "true",
+        "host": "mernprojectcluster.ghfix.mongodb.net",
+        "user": "admin",
+        "password": "QDrLmCVMdQwedml5",
+        "database": "test"
+    }
+}
+
