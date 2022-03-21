@@ -4,14 +4,14 @@ const Recipe = require('../models/recipes');
 
 router.get('/recipes', (req, res, next) => {
     // Return all the data
-    Recipe.find({})
+    Recipe.getAllRecipes()
         .then((data) => res.json(data))
         .catch(next);
 });
 
 router.post('/recipes', (req, res, next) => {
     if (req.body.name) {
-        Recipe.create(req.body)
+        Recipe.insertRecipe(req.body)
             .then((data) => res.json(data))
             .catch(next);
     } else {
@@ -22,7 +22,7 @@ router.post('/recipes', (req, res, next) => {
 });
 
 router.delete('/recipes/:id', (req, res, next) => {
-    Recipe.findOneAndDelete({ _id: req.params.id })
+    Recipe.deleteRecipeById(req.params.id)
         .then((data) => res.json(data))
         .catch(next);
 });

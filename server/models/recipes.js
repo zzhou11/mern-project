@@ -13,6 +13,22 @@ const RecipeSchema = new Schema({
 });
 
 // Create model for recipe
-const Recipe = mongoose.model('recipe', RecipeSchema);
+const RecipeModel = mongoose.model('recipe', RecipeSchema);
 
-module.exports = Recipe;
+module.exports.Recipe = RecipeModel;
+
+module.exports.getAllRecipes = async () => {
+    return RecipeModel.find({})
+}
+
+module.exports.insertRecipe = async (newRecipe) => {
+    return RecipeModel.create(newRecipe)
+}
+
+module.exports.deleteRecipeById = async (id) => {
+    return RecipeModel.findOneAndDelete({ _id: id })
+}
+
+module.exports.deleteRecipeByName = async (recipeName) => {
+    return RecipeModel.findOneAndDelete({name: recipeName})
+}
